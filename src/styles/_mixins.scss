@@ -1,12 +1,13 @@
+// scss-lint:disable all
 @mixin box-shadow($shadow...) {
     -webkit-box-shadow: $shadow;
     box-shadow:         $shadow;
 }
 
 @mixin notification-variant($background, $border-color, $icon) {
-    background-color: $background;
-    border-left:      2px solid #{$border-color};
-    color:            #524c4c;
+    border-radius: 5px;
+    background-color: rgba($background, .9);
+    color:            #ffffff;
 
     @if $icon != '' {
         .notification-icon:before {
