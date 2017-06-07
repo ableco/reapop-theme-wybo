@@ -1,3 +1,4 @@
+// scss-lint:disable all
 @import 'variables';
 @import 'mixins';
 
@@ -24,7 +25,7 @@
 
 // NotificationSystem component
 :local .notifications-system {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "robotoRegular", sans-serif;
     font-size:   14px;
     line-height: 1.428571429;
 }
@@ -134,8 +135,8 @@
         @include notification-animation('right');
     }
     &--bl {
-        bottom: 0;
-        left:   20px;
+        bottom: 45px;
+        left:  80px;
         @include notification-animation('left');
     }
 }
@@ -160,12 +161,10 @@
 // Notification component
 :local .notification {
     display:    table;
-    width:      100%;
+    width:      330px;
     height:     100%;
     position:   relative;
-    min-height: 40px;
     border:     none;
-    @include box-shadow(0 1px 3px -1px rgba(0, 0, 0, 0.3));
     z-index:    999;
 
     &-wrapper {
@@ -188,7 +187,7 @@
         background-size: cover;
     }
     &-icon {
-        display:    inline-block;
+        display:    none;
         box-sizing: border-box;
         margin:     10px 0 10px 15px;
         // override font-size of `fa` class
@@ -198,27 +197,21 @@
         display:        table-cell;
         vertical-align: top;
         box-sizing:     border-box;
-        width:          100%;
-        padding:        10px 20px;
+        width:          $notification-max-width;
+        padding:        15px 0px 15px 15px;
+        word-break: break-word;
     }
     &-close-button-container {
         display:    table-cell;
-        padding:    10px 15px;
+        padding:    15px;
         box-sizing: border-box;
 
     }
     &-close-button {
         // override font-size of `fa` class
-        font-size: 14px !important;
-        color:     #524c4c;
-        cursor:    pointer;
-
-        &:before {
-            content: $notification-close-button;
-        }
-        &:hover {
-            color: lighten(#524c4c, 10%);
-        }
+        cursor: pointer;
+        font-size: 11px;
+        line-height: 16px;
     }
     // global style for buttons
     &-buttons {
